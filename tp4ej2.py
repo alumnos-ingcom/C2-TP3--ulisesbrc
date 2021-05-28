@@ -1,6 +1,6 @@
 ################
 # Walter Ulises Ayllapan - @ulisesbrc
-# Ejercicio 1. Ingreso de números enteros
+# Ejercicio 2. Suma lenta
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 
