@@ -18,7 +18,6 @@ def maximo(lista):
     """
     lista.sort(reverse=True)
     return lista[0]
-    pass
 if __name__ == "__main__":
     lista =[55,2,88,645,4,3,7]
     minimo = minimo(lista)
