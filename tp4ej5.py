@@ -22,6 +22,6 @@ if __name__ == "__main__":
     numero = signo(4);
     print(f'el 4 es {numero}')
     numero = signo(-4);
-    print(f'el -4 {numero}')
+    print(f'el -4 es {numero}')
     numero = signo(0);
-    print(f'el 0 {numero}')
+    print(f'el 0 es {numero}')
