@@ -21,7 +21,8 @@ def suma_lenta(numero, otro_numero):
             otro_numero=otro_numero-1
         return otro_numero
 
-
-if __name__ == "__main__":
+def prueba():
     suma = suma_lenta(-4,-44)
     print(suma)
+if __name__ == "__main__":  
+    prueba()
