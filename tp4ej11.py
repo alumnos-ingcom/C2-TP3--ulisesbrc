@@ -9,10 +9,8 @@ def es_palindromo(texto):
     texto_derecha_izquierda=""
     for i in texto:
         texto_derecha_izquierda = i+texto_derecha_izquierda
-    if(texto==texto_derecha_izquierda):
-        return True
-    else:
-        return False
-    
-if __name__ == "__main__":
+    return texto==texto_derecha_izquierda    
+def prueba():
    print(es_palindromo("neuquen"))
+if __name__ == "__main__":
+    prueba()
