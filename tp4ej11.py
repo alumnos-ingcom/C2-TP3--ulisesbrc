@@ -11,6 +11,7 @@ def es_palindromo(texto):
         texto_derecha_izquierda = i+texto_derecha_izquierda
     return texto==texto_derecha_izquierda    
 def prueba():
-   print(es_palindromo("neuquen"))
+    texto = es_palindromo("neuquen")
+    print(texto)
 if __name__ == "__main__":
     prueba()
