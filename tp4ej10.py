@@ -5,13 +5,8 @@
 ################
 
 # Reemplazar por las funciones del ejercicio
-def es_primo(numero):
-    if numero<=1:
-        return False
-    for n in range(2,numero):
-        if numero%n==0:
-            return False
-    return True
+from tp4ej9 import es_primo
+from tp4ej1 import ingreso_entero
 def factores_primos(numero):
     factores =[]
     for n in range(2,numero):        
@@ -28,5 +23,22 @@ def factores_primos(numero):
             tupla=()
     return tupla
 
+def prueba():
+    mensaje="Ingrese un número"
+    mensaje_error = "Ingrese un número válido"
+    numero= False
+    while not numero:
+        try:
+            numero = ingreso_entero(mensaje)
+        except:
+            print(mensaje_error)
+    factoresprimos = factores_primos(numero)
+    mensaje=""
+    for primos in factoresprimos:
+        print(primos)
+        mensaje = mensaje+str(primos)+","
+    cantidad_caracteres= len(mensaje)
+    mensaje = mensaje[0:cantidad_caracteres-1]
+    print(f"Los factores primos del numero {numero} son el {mensaje}")
 if __name__ == "__main__":
-   print(factores_primos(1978))
+    prueba()
