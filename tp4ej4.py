@@ -6,11 +6,14 @@
 def ingrese_numero(mensaje):
     """
     Esta funcion muestra un mensaje y agrega la # para indicar el ingreso
-    de un número entero.
+    de un número.
     """
     numero= False
     try:
         ingreso = input(mensaje + " #")
+        numero = ingreso
+        if(numero==0):
+            return numero
         numero = float(ingreso)
         return numero  
     except ValueError as error:
