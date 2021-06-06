@@ -22,7 +22,6 @@ def convertir_a_centigrados(fahrenheit):
 def prueba():
     numero = False
     mensaje="Ingrese un número"
-    mensaje_error = "Ingrese un número válido"
     while not numero:
         numero = ingrese_numero(mensaje)
     fahrrenheit= convertir_a_fahrrenheit(numero)
