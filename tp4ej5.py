@@ -3,7 +3,7 @@
 # Ejercicio 5. Números positivos y negativos
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
-
+from tp4ej4 import ingrese_numero
 
 # Reemplazar por las funciones del ejercicio
 def signo(numero):
@@ -18,10 +18,15 @@ def signo(numero):
         else:
             return "Número cero"
 
+def prueba():
+    numero=False
+    while not numero:
+        try:
+            numero = ingrese_numero("Ingrese un número")
+        except:
+            print("El número ingresado no es válido")
+
+    signo_numero = signo(numero)
+    print(f'el {numero} es {signo_numero}')
 if __name__ == "__main__":
-    numero = signo(4);
-    print(f'el 4 es {numero}')
-    numero = signo(-4);
-    print(f'el -4 es {numero}')
-    numero = signo(0);
-    print(f'el 0 es {numero}')
+    prueba() 
