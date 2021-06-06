@@ -35,7 +35,6 @@ def prueba():
     factoresprimos = factores_primos(numero)
     mensaje=""
     for primos in factoresprimos:
-        print(primos)
         mensaje = mensaje+str(primos)+","
     cantidad_caracteres= len(mensaje)
     mensaje = mensaje[0:cantidad_caracteres-1]
