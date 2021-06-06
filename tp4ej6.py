@@ -18,10 +18,12 @@ def maximo(lista):
     """
     lista.sort(reverse=True)
     return lista[0]
-if __name__ == "__main__":
+def prueba():
     lista =[55,2,88,645,4,3,7]
-    minimo = minimo(lista)
-    maximo = maximo(lista)
+    lista_minimo = minimo(lista)
+    lista_maximo = maximo(lista)
     print(f'La lista contiene los siguientes valores {lista}')
-    print(f'El valor minimo de la lista es {minimo}')
-    print(f'El valor maximo de la lista es {maximo}')
+    print(f'El valor minimo de la lista es {lista_minimo}')
+    print(f'El valor maximo de la lista es {lista_maximo}')
+if __name__ == "__main__":
+    prueba() 
