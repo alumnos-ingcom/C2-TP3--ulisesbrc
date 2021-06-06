@@ -22,12 +22,12 @@ def prueba():
         try:
             dividendo = ingreso_entero("Ingrese un número entero a ser dividido")
         except:
-            print(mensaje_error);
+            print(mensaje_error)
     while not divisor:
         try:
             divisor = ingreso_entero(f"Ingrese un número entero que dividirá a {dividendo}")
         except:
-            print(mensaje_error);
+            print(mensaje_error)
     divisionlenta = division_lenta(dividendo ,divisor)
     cociente, resto = divisionlenta
     print(f'La division entre {dividendo} y {divisor} da como resultado {cociente} y resto {resto}')
