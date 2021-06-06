@@ -6,22 +6,28 @@
 
 
 # Reemplazar por las funciones del ejercicio
+from tp4ej4 import ingrese_numero
 def convertir_a_fahrrenheit(centigrados):
     """
     Esta funcion convierte de centigrados a fahrenheit.
     """
     fahrenheit =(centigrados*1.8)+ 32
-    return fahrenheit;
+    return fahrenheit
 def convertir_a_centigrados(fahrenheit):
     """
     Esta funcion convierte de fahrenheit a centigrados.
     """
     centigrados= (fahrenheit-32)/1.8
-    return centigrados;
-
-
+    return centigrados
+def prueba():
+    numero = False
+    mensaje="Ingrese un número"
+    mensaje_error = "Ingrese un número válido"
+    while not numero:
+        numero = ingrese_numero(mensaje)
+    fahrrenheit= convertir_a_fahrrenheit(numero)
+    print(f'{numero} grados son {fahrrenheit} fahrrenheit')
+    centigrados=convertir_a_centigrados(numero)
+    print(f'{numero} fahrrenheit son {centigrados} centigrados')
 if __name__ == "__main__":
-    fahrrenheit= convertir_a_fahrrenheit(39);
-    print(f'39 grados son {fahrrenheit} fahrrenheit')
-    centigrados=convertir_a_centigrados(22);
-    print(f'22 fahrrenheit son {centigrados} centigrados')
+    prueba()
