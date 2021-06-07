@@ -11,7 +11,6 @@ def ingreso_entero(mensaje):
     Esta funcion muestra un mensaje y agrega la # para indicar el ingreso
     de un número entero.
     """
-    entero= False
     try:
         ingreso = input(mensaje + " #")
         entero = int(ingreso)
@@ -52,14 +51,29 @@ def ingreso_entero_restringido(mensaje, valor_minimo=0, valor_maximo=10):
 class IngresoIncorrecto(Exception):
     pass
 def prueba():
-    entero=False
-    while not entero:
+    ingresar=True
+    while ingresar:
         try:
             entero= ingreso_entero("Ingrese un entero")
+            ingresar=False
         except IngresoIncorrecto as err:
             print("El valor ingresado no es un entero")
-    ingreso_entero_restringido("Ingrese un entero entre 0 y 10",0,10)    
-    ingreso_entero_reintento("Ingrese un entero hasta 5 veces", 5)
+    ingresar=True
+    valor_minimo=0
+    valor_maximo=10
+    while ingresar:
+        try:
+            entero_restringido_uno= ingreso_entero_restringido(f"Ingrese un entero entre {valor_minimo} y {valor_maximo}",valor_minimo,valor_maximo)
+            ingresar=False
+        except IngresoIncorrecto as err:
+            print("El valor ingresado no es un entero")
+    ingresar=True
+    cantidad=5
+    try:
+        entero_reintento= ingreso_entero_reintento(f"Ingrese un entero hasta {cantidad} veces", cantidad)
+        ingresar=False
+    except IngresoIncorrecto as err:
+        raise IngresoIncorrecto("Te quedaste sin intentos!")
 
 if __name__ == "__main__":
     prueba()
