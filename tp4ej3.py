@@ -20,10 +20,16 @@ def convertir_a_centigrados(fahrenheit):
     centigrados= (fahrenheit-32)/1.8
     return centigrados
 def prueba():
-    numero = False
+    ingresar_numero = True
     mensaje="Ingrese un número"
-    while not numero:
-        numero = ingrese_numero(mensaje)
+    while ingresar_numero:
+        try:
+            numero = ingrese_numero(mensaje)
+            ingresar_numero=False
+        except :
+            print("No era un número, ingresalo nuevamente")
+            ingresar_numero=True
+            continue
     fahrrenheit= convertir_a_fahrrenheit(numero)
     print(f'{numero} grados son {fahrrenheit} fahrrenheit')
     centigrados=convertir_a_centigrados(numero)
