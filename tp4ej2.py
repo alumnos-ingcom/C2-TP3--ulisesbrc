@@ -21,19 +21,21 @@ def suma_lenta(numero, otro_numero):
             otro_numero=otro_numero-1
         return otro_numero
 def prueba():
-    numero=False
-    otro_numero=False
+    buscar_numero=True
     mensaje="Ingrese un número"
     mensaje_otro="Ingrese otro número"
     mensaje_error="No es un número válido, intente de nuevo"
-    while not numero:
+    while buscar_numero:
         try:
             numero=ingreso_entero(mensaje)
+            buscar_numero=False
         except:
             print(mensaje_error)
-    while not otro_numero:
+    buscar_numero=True
+    while buscar_numero:
         try:
             otro_numero=ingreso_entero(mensaje_otro)
+            buscar_numero=False
         except:
             print(mensaje_error)    
     suma = suma_lenta(numero,otro_numero)
