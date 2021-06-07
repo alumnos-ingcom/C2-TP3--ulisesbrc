@@ -3,8 +3,9 @@
 # Ejercicio 5. Números positivos y negativos
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
-from tp4ej4 import ingrese_numero
-
+from tp4ej1 import ingreso_entero_reintento
+class IngresoIncorrecto(Exception):
+    pass
 # Reemplazar por las funciones del ejercicio
 def signo(numero):
     """
@@ -19,13 +20,11 @@ def signo(numero):
             return "Número cero"
 
 def prueba():
-    numero=False
-    while not numero:
-        try:
-            numero = ingrese_numero("Ingrese un número")
-        except:
-            print("El número ingresado no es válido")
-
+    cantidad=5
+    try:
+        numero=ingreso_entero_reintento(f"Ingrese un entero hasta {cantidad} veces", cantidad)
+    except IngresoIncorrecto as err:
+        raise IngresoIncorrecto("El número ingresado no es válido")
     signo_numero = signo(numero)
     print(f'el {numero} es {signo_numero}')
 if __name__ == "__main__":
