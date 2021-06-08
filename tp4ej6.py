@@ -10,14 +10,30 @@ def minimo(lista):
     """
     Esta función recibe una lista y devuelve su valor minimo.
     """
-    lista.sort()
-    return lista[0]
+    minimo = 0
+    primero =True
+    for i in lista:
+        if primero:
+            minimo = i
+            primero=False
+        else:
+            if i <minimo:
+                minimo=i
+    return minimo
 def maximo(lista):
     """
     Esta función recibe una lista y devuelve su valor máximo.
     """
-    lista.sort(reverse=True)
-    return lista[0]
+    maximo = 0
+    primero =True
+    for i in lista:
+        if primero:
+            maximo = i
+            primero=False
+        else:
+            if i >maximo:
+                maximo=i
+    return maximo
 def prueba():
     lista =[55,2,88,645,4,3,7]
     lista_minimo = minimo(lista)
