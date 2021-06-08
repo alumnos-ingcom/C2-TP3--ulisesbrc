@@ -89,22 +89,25 @@ def ordenar_menor_a_mayor(uno, dos, tres):
 def prueba():
     mensaje_error = "Ingrese un número válido"
     mensaje="Ingrese un número"
-    uno = False
-    dos = False
-    tres = False
-    while not uno:
+    solicitar=True  
+    while solicitar:
         try:
             uno = ingreso_entero(mensaje)
+            solicitar=False
         except:
             print(mensaje_error)
-    while not dos:
+    solicitar=True
+    while solicitar:
         try:
             dos = ingreso_entero(mensaje)
+            solicitar=False
         except:
             print(mensaje_error)
-    while not tres:
+    solicitar=True
+    while solicitar:
         try:
             tres = ingreso_entero(mensaje)
+            solicitar=False
         except:
             print(mensaje_error)
     tupla_ordenada_mayor_a_menor = ordenar_mayor_a_menor(uno,dos,tres)
