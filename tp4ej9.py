@@ -15,12 +15,13 @@ def es_primo(numero):
             return False
     return True
 def prueba():
-    numero = False
+    solicitar_numero =True
     mensaje="Ingrese un número"
     mensaje_error = "Ingrese un número válido"
-    while not numero:
+    while solicitar_numero:
         try:
             numero = ingreso_entero(mensaje)
+            solicitar_numero=False
         except:
             print(mensaje_error)
     esprimo = es_primo(numero)
