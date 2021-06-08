@@ -26,10 +26,11 @@ def factores_primos(numero):
 def prueba():
     mensaje="Ingrese un número"
     mensaje_error = "Ingrese un número válido"
-    numero= False
-    while not numero:
+    ingresar_numero=True
+    while ingresar_numero:
         try:
             numero = ingreso_entero(mensaje)
+            ingresar_numero=False
         except:
             print(mensaje_error)
     factoresprimos = factores_primos(numero)
