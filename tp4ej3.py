@@ -6,7 +6,7 @@
 
 
 # Reemplazar por las funciones del ejercicio
-from tp4ej4 import ingrese_numero
+from tp4ej1 import ingreso_entero_reintento
 def convertir_a_fahrrenheit(centigrados):
     """
     Esta funcion convierte de centigrados a fahrenheit.
@@ -20,16 +20,9 @@ def convertir_a_centigrados(fahrenheit):
     centigrados= (fahrenheit-32)/1.8
     return centigrados
 def prueba():
-    ingresar_numero = True
     mensaje="Ingrese un número"
-    while ingresar_numero:
-        try:
-            numero = ingrese_numero(mensaje)
-            ingresar_numero=False
-        except :
-            print("No era un número, ingresalo nuevamente")
-            ingresar_numero=True
-            continue
+    cantidad_de_intentos=10
+    numero = ingreso_entero_reintento(mensaje,cantidad_de_intentos)
     fahrrenheit= convertir_a_fahrrenheit(numero)
     print(f'{numero} grados son {fahrrenheit} fahrrenheit')
     centigrados=convertir_a_centigrados(numero)
