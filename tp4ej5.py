@@ -3,9 +3,8 @@
 # Ejercicio 5. Números positivos y negativos
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
-from tp4ej1 import ingreso_entero_reintento
-class IngresoIncorrecto(Exception):
-    pass
+from tp4ej1 import ingreso_entero_reintento,IngresoIncorrecto
+
 # Reemplazar por las funciones del ejercicio
 def signo(numero):
     """
