@@ -5,7 +5,7 @@
 ################
 
 # Reemplazar por las funciones del ejercicio
-from tp4ej1 import ingreso_entero
+from tp4ej1 import ingreso_entero_reintento
 def division_lenta(dividendo, divisor):
     cociente = 1
     resto = dividendo - divisor
@@ -15,21 +15,9 @@ def division_lenta(dividendo, divisor):
     return (cociente,resto)
 
 def prueba():
-    solicitar = True
-    mensaje_error = "Ingrese un número válido"
-    while solicitar:
-        try:
-            dividendo = ingreso_entero("Ingrese un número entero a ser dividido")
-            solicitar=False
-        except:
-            print(mensaje_error)
-    solicitar= True
-    while solicitar:
-        try:
-            divisor = ingreso_entero(f"Ingrese un número entero que dividirá a {dividendo}")
-            solicitar=False
-        except:
-            print(mensaje_error)
+    cantidad_de_intentos=10
+    dividendo = ingreso_entero_reintento("Ingrese un número entero a ser dividido",cantidad_de_intentos)
+    divisor = ingreso_entero_reintento(f"Ingrese un número entero que dividirá a {dividendo}",cantidad_de_intentos)
     divisionlenta = division_lenta(dividendo ,divisor)
     cociente, resto = divisionlenta
     print(f'La division entre {dividendo} y {divisor} da como resultado {cociente} y resto {resto}')
