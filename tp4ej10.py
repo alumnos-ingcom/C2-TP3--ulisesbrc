@@ -6,7 +6,7 @@
 
 # Reemplazar por las funciones del ejercicio
 from tp4ej9 import es_primo
-from tp4ej1 import ingreso_entero
+from tp4ej1 import ingreso_entero_reintento
 def factores_primos(numero):
     factores =[]
     for n in range(2,numero):        
@@ -24,15 +24,8 @@ def factores_primos(numero):
     return tupla
 
 def prueba():
-    mensaje="Ingrese un número"
-    mensaje_error = "Ingrese un número válido"
-    ingresar_numero=True
-    while ingresar_numero:
-        try:
-            numero = ingreso_entero(mensaje)
-            ingresar_numero=False
-        except:
-            print(mensaje_error)
+    cantidad_de_intentos=10
+    numero = ingreso_entero_reintento("Ingrese un número",cantidad_de_intentos)
     factoresprimos = factores_primos(numero)
     mensaje=""
     for primos in factoresprimos:

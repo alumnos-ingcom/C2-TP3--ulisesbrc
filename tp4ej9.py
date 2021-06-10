@@ -6,7 +6,7 @@
 
 
 # Reemplazar por las funciones del ejercicio
-from tp4ej1 import ingreso_entero
+from tp4ej1 import ingreso_entero_reintento
 def es_primo(numero):
     if numero<=1:
         return False
@@ -15,15 +15,9 @@ def es_primo(numero):
             return False
     return True
 def prueba():
-    solicitar_numero =True
+    cantidad_de_intentos=10
     mensaje="Ingrese un número"
-    mensaje_error = "Ingrese un número válido"
-    while solicitar_numero:
-        try:
-            numero = ingreso_entero(mensaje)
-            solicitar_numero=False
-        except:
-            print(mensaje_error)
+    numero = ingreso_entero_reintento(mensaje,cantidad_de_intentos)
     esprimo = es_primo(numero)
     if esprimo:
         print(f"El número {numero} es primo")
