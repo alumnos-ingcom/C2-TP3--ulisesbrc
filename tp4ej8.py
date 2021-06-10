@@ -6,7 +6,7 @@
 
 
 # Reemplazar por las funciones del ejercicio
-from tp4ej1 import ingreso_entero
+from tp4ej1 import ingreso_entero_reintento
 def ordenar_mayor_a_menor(uno, dos, tres):
     """
     Esta función recibe tres numeros y devuelve esos tres numero ordenados de mayor a menor en una tupla.
@@ -87,29 +87,11 @@ def ordenar_menor_a_mayor(uno, dos, tres):
         else:
             return b,c,a
 def prueba():
-    mensaje_error = "Ingrese un número válido"
+    cantidad_de_intentos=10
     mensaje="Ingrese un número"
-    solicitar=True  
-    while solicitar:
-        try:
-            uno = ingreso_entero(mensaje)
-            solicitar=False
-        except:
-            print(mensaje_error)
-    solicitar=True
-    while solicitar:
-        try:
-            dos = ingreso_entero(mensaje)
-            solicitar=False
-        except:
-            print(mensaje_error)
-    solicitar=True
-    while solicitar:
-        try:
-            tres = ingreso_entero(mensaje)
-            solicitar=False
-        except:
-            print(mensaje_error)
+    uno = ingreso_entero_reintento(mensaje,cantidad_de_intentos)
+    dos = ingreso_entero_reintento(mensaje,cantidad_de_intentos)
+    tres = ingreso_entero_reintento(mensaje,cantidad_de_intentos)
     tupla_ordenada_mayor_a_menor = ordenar_mayor_a_menor(uno,dos,tres)
     tupla_ordenada_menor_a_mayor = ordenar_menor_a_mayor(uno,dos,tres)
     print(f'Los numeros ingresados son {uno},{dos},{tres} y la tupla ordenada de mayor a menor es {tupla_ordenada_mayor_a_menor}')
