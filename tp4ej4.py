@@ -3,19 +3,7 @@
 # Ejercicio 4. Comparación de números
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
-class IngresoIncorrecto(Exception):
-    pass
-def ingrese_numero(mensaje):
-    """
-    Esta funcion muestra un mensaje y agrega la # para indicar el ingreso
-    de un número.
-    """
-    try:
-        numero = float(input(mensaje + " #"))
-        return numero  
-    except ValueError as error:
-        raise IngresoIncorrecto("No era un número")
-
+from tp4ej1 import ingreso_entero_reintento
 # Reemplazar por las funciones del ejercicio
 def compara(numero, otro_numero):
     """
@@ -32,24 +20,9 @@ def compara(numero, otro_numero):
         else:
             return 0
 def prueba():
-    ingresar = True
-    while ingresar:
-        try:
-            numero=ingrese_numero("Ingresa un número")
-            ingresar=False
-        except:
-            print("El valor ingresado no es correcto")
-            ingresar=True
-            continue
-    ingresar = True
-    while ingresar:
-        try:
-            otro_numero=ingrese_numero("Ingresa otro número")
-            ingresar=False
-        except:
-            print("El valor ingresado no es correcto")
-            ingresar=True
-            continue
+    cantidad_de_intentos=10
+    numero=ingreso_entero_reintento("Ingresa un número",cantidad_de_intentos)
+    otro_numero=ingreso_entero_reintento("Ingresa otro número",cantidad_de_intentos)
     salida = compara(numero,otro_numero)
     if (salida == 1):
         print(f"el numero {numero} es mayor a {otro_numero}")
